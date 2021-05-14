@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="VC.Oboryd_open">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Frame CornerRadius="15" Padding="0"
+                   Margin="0,-15,0,0" HasShadow="False"
+                       BackgroundColor="Red"
+                       VerticalOptions="Start">
+                    <Grid>
+                        <StackLayout>
+                            <StackLayout>
+                                <Image Source="Obody_image.jpeg"
+                                       VerticalOptions="Start"
+                                       Aspect="AspectFill"
+                                       x:Name="Cab_image" />
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout VerticalOptions="End">
+                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="20,0">
+                                <Label Text="Видеокарта NVidea Rtx 1050Ti" HorizontalOptions="StartAndExpand"
+                                       FontAttributes="Bold"
+                                       TextColor="White"
+                                       FontSize="Medium"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="20,0,20,10">
+                                <Label Text="№ 12345678"
+                                       HorizontalOptions="StartAndExpand"
+                                       FontAttributes="Bold"
+                                       TextColor="White"
+                                       FontSize="Default"/>
+                                <Label Text="Кабинет: 303"
+                                       HorizontalOptions="EndAndExpand"
+                                       FontAttributes="Bold"
+                                       TextColor="White"
+                                       FontSize="Default"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+           <StackLayout Orientation="Vertical" Margin="20,10" VerticalOptions="FillAndExpand">
+                    <Label Text="Характеристики"
+                           TextColor="#E4410F"
+                           FontAttributes="Bold"
+                           FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center"/>
+               <StackLayout Orientation="Horizontal">
+                   <Label Text="Инв. №:"
+                           TextColor="Black"
+                           FontAttributes="None"
+                           FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry Placeholder="123456789"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="Center"
+                           TextColor="#ed6e43"/>
+               </StackLayout>
+               <StackLayout Orientation="Horizontal">
+                   <Label Text="Кабинет:"
+                           TextColor="Black"
+                           FontAttributes="None"
+                           FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry Placeholder="303"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="Center"
+                           TextColor="#ed6e43"/>
+               </StackLayout>
+               <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                   <Label Text="Описание"
+                           TextColor="Black"
+                           FontAttributes="None"
+                           FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Editor Placeholder="123456789"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand"
+                           TextColor="#ed6e43"/>
+               </StackLayout>
+               <StackLayout>
+                   <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                       <Button Text="Удалить" x:Name="Delete_oboryd" HorizontalOptions="Start" TextColor="White" BackgroundColor="#E4410F"/>
+                       <Button Text="Сохранить" x:Name="Save_oboryd" TextColor="White" HorizontalOptions="EndAndExpand" BackgroundColor="#E4410F"/>
+                   </StackLayout>
+               </StackLayout>
+            </StackLayout>
+       </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

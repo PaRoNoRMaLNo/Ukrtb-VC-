@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:mv="clr-namespace:VC"
+            x:Class="VC.MainPage"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            UnselectedTabColor="#ed6e43"
+            SelectedTabColor="#E4410F" IconImageSource="" 
+            >
+
+    <ContentPage Title="Дом" IconImageSource="home_icon.png">
+        <ContentPage.BindingContext>
+            <mv:MainViewModel/>
+        </ContentPage.BindingContext>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="logo.png" HorizontalOptions="Start" WidthRequest="50" Margin="20,10"/>
+                <Label Text="Вычислительный центр" FontAttributes="Bold"  TextColor="#E4410F" FontSize="24" Margin="0" VerticalOptions="Center"/>
+                
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Мастерские" FontAttributes="Bold" FontSize="Medium" Margin="20,0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" TextColor="#000000"/>
+                <Button Text="Показать все" FontAttributes="None" BackgroundColor="Transparent"  HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" TextColor="#ff7f5c"/>
+
+            </StackLayout>
+            <CarouselView ItemsSource="{Binding cabinet}" HeightRequest="200"  PeekAreaInsets="60">
+                <CarouselView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="30"/>
+                </CarouselView.ItemsLayout>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame HasShadow="True" BorderColor="DarkGray" CornerRadius="15" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0">
+                                <Grid Padding="0" BackgroundColor="Black" x:Name="Main_Grid">
+
+                                    <StackLayout  Padding="0">
+                                        <Image Source="{Binding Image}" Margin="0" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+                                    </StackLayout>
+                                    <StackLayout VerticalOptions="End" Margin="20" x:Name="Title_small_text">
+                                        <Label Text="{Binding Name}" TextColor="White" FontAttributes="None" FontSize="Small"/>
+                                        <Label Text="{Binding Number}" TextColor="White" FontAttributes="None" FontSize="Medium"/>
+                                       
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <Label Text="Дополнительно" VerticalOptions="Start" HorizontalOptions="Start"
+                   Margin="20,10" FontSize="Medium" TextColor="Black"
+                   FontAttributes="Bold"/>
+            <StackLayout VerticalOptions="Start">
+                <Frame Margin="20,0" CornerRadius="15" BackgroundColor="#ed6e43" HasShadow="True">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="baseline_receipt_long_white_24dp.png" HorizontalOptions="Start" Margin="20,0"/>
+                        <Label Text="Заявки" FontSize="Medium" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            <StackLayout VerticalOptions="Start">
+                <Frame Margin="20,0" CornerRadius="15" BackgroundColor="#ed6e43" HasShadow="True">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="baseline_receipt_long_white_24dp.png" HorizontalOptions="Start" Margin="20,0"/>
+                        <Label Text="Оборудование" FontSize="Medium" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            <StackLayout VerticalOptions="Start">
+                <Frame Margin="20,0" CornerRadius="15" BackgroundColor="#ed6e43" HasShadow="True">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="baseline_language_white_24dp.png" HorizontalOptions="Start" Margin="20,0"/>
+                        <Label Text="Сайт УКРТБ" FontSize="Medium" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Кабинеты"  IconImageSource="round_school_white_24dp.png">
+        <Grid>
+            <StackLayout>
+                <Label Text="Кабинеты"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   TextColor="#E4410F"
+                   Margin="20"/>
+                <Picker  TextColor="#E4410F" 
+                   FontAttributes="None" Margin="20,0" 
+                       x:Name="Search_cabinet"
+                       SelectedIndexChanged="Search_cabinet_SelectedIndexChanged" SelectedIndex="1">
+                    <Picker.Items>
+                        <x:String>Все</x:String>
+                    </Picker.Items>
+                    </Picker>
+                <ScrollView  Margin="20" VerticalOptions="Start" VerticalScrollBarVisibility="Never">
+                    <StackLayout x:Name="Cabinet_panel">
+                        <mv:View1></mv:View1>
+                        <mv:View1></mv:View1>
+                        <mv:View1></mv:View1>
+                        <mv:View1></mv:View1>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+            <ActivityIndicator 
+                x:Name="Load_activity"
+                IsEnabled="True" 
+                IsRunning="False" 
+                HorizontalOptions="Center" 
+                VerticalOptions="Center"/>
+        </Grid>
+    </ContentPage>
+    <ContentPage Title="Оборудование" IconImageSource="baseline_construction_white_24dp.png">
+        <Grid>
+            <StackLayout>
+                <Label Text="Оборудование"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   TextColor="#E4410F"
+                   Margin="20"/>
+                <Entry Placeholder="Поиск оборудования" 
+                       TextColor="#E4410F" 
+                   FontAttributes="None" Margin="20,0" 
+                       x:Name="Search_obor"/>
+                <ScrollView  Margin="20,0" 
+                             VerticalOptions="EndAndExpand"
+                             VerticalScrollBarVisibility="Never">
+                    <StackLayout>
+                        <mv:Oboryd/>
+                        <mv:Oboryd/>
+                        <mv:Oboryd/>
+                        <mv:Oboryd/>
+                        <mv:Oboryd/>
+                        <mv:Oboryd/>
+                    </StackLayout>
+                </ScrollView>
+               
+            </StackLayout>
+            <StackLayout VerticalOptions="End">
+                <Frame Padding="0" HeightRequest="50" WidthRequest="50" CornerRadius="25" BackgroundColor="#E4410F" HorizontalOptions="End" Margin="10,5">
+                    <Image Source="round_add_white_24dp.png"/>
+                </Frame>
+            </StackLayout>
+            <ActivityIndicator 
+                IsEnabled="True" 
+                IsRunning="False" 
+                HorizontalOptions="Center" 
+                VerticalOptions="Center"/>
+        </Grid>
+    </ContentPage>
+    <ContentPage Title="Заявки" IconImageSource="baseline_receipt_long_white_24dp.png">
+        <Grid>
+            <StackLayout>
+                <Label Text="Заявки"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   TextColor="#E4410F"
+                   Margin="20"/>
+                <DatePicker 
+                       TextColor="#E4410F" 
+                   FontAttributes="None" Margin="20,0" />
+                <ScrollView  Margin="20,0" 
+                             VerticalOptions="EndAndExpand"
+                             VerticalScrollBarVisibility="Never">
+                    <StackLayout>
+                        <mv:Request/>
+                        <mv:Request/>
+                        <mv:Request/>
+                        <mv:Request/>
+                        <mv:Request/>
+                    </StackLayout>
+                </ScrollView>
+
+            </StackLayout>
+            <StackLayout VerticalOptions="End">
+                <Frame Padding="0" Opacity="1" HeightRequest="50" WidthRequest="50" CornerRadius="25" BackgroundColor="#E4410F" HorizontalOptions="End" Margin="10,5">
+                    <Image Source="round_update_white_24dp.png"/>
+                </Frame>
+            </StackLayout>
+            <ActivityIndicator 
+                IsEnabled="True" 
+                IsRunning="False" 
+                HorizontalOptions="Center" 
+                VerticalOptions="Center"/>
+        </Grid>
+    </ContentPage>
+</TabbedPage>

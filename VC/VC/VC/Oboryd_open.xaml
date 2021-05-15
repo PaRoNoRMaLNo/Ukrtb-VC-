@@ -19,71 +19,76 @@
                                        x:Name="Cab_image" />
                             </StackLayout>
                         </StackLayout>
-                        <StackLayout VerticalOptions="End">
-                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="20,0">
-                                <Label Text="Видеокарта NVidea Rtx 1050Ti" HorizontalOptions="StartAndExpand"
-                                       FontAttributes="Bold"
-                                       TextColor="White"
-                                       FontSize="Medium"/>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" Margin="20,0,20,10">
-                                <Label Text="№ 12345678"
-                                       HorizontalOptions="StartAndExpand"
-                                       FontAttributes="Bold"
-                                       TextColor="White"
-                                       FontSize="Default"/>
-                                <Label Text="Кабинет: 303"
-                                       HorizontalOptions="EndAndExpand"
-                                       FontAttributes="Bold"
-                                       TextColor="White"
-                                       FontSize="Default"/>
-                            </StackLayout>
-                        </StackLayout>
+                       
                     </Grid>
                 </Frame>
             </StackLayout>
-           <StackLayout Orientation="Vertical" Margin="20,10" VerticalOptions="FillAndExpand">
+            <ScrollView VerticalScrollBarVisibility="Never">
+                <StackLayout Orientation="Vertical" Margin="20,10" VerticalOptions="FillAndExpand">
                     <Label Text="Характеристики"
                            TextColor="#E4410F"
                            FontAttributes="Bold"
                            FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center"/>
-               <StackLayout Orientation="Horizontal">
-                   <Label Text="Инв. №:"
+                    <Editor Text="" 
+                           x:Name="Oboryd_name"
+                            AutoSize="TextChanges"
+                           Placeholder="Название"
+                           MaxLength="100"
+                           TextColor="#ed6e43"
+                           HorizontalOptions="FillAndExpand" 
+                           VerticalOptions="Start"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Инв. №:"
                            TextColor="Black"
                            FontAttributes="None"
                            FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <Entry Placeholder="123456789"
+                        <Entry Placeholder="123456789"
+                           MaxLength="50"
+                               x:Name="Oboryd_number"
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="Center"
-                           TextColor="#ed6e43"/>
-               </StackLayout>
-               <StackLayout Orientation="Horizontal">
-                   <Label Text="Кабинет:"
+                           TextColor="#ed6e43"
+                           />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Кабинет:"
                            TextColor="Black"
                            FontAttributes="None"
                            FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <Entry Placeholder="303"
+                        <Picker 
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="Center"
-                           TextColor="#ed6e43"/>
-               </StackLayout>
-               <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
-                   <Label Text="Описание"
+                           TextColor="#ed6e43"
+                           x:Name="Oboryd_cab">
+                            <Picker.Items>
+                            </Picker.Items>
+                        </Picker>
+
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                        <Label Text="Описание"
                            TextColor="Black"
                            FontAttributes="None"
                            FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <Editor Placeholder="123456789"
+                        <Editor Placeholder="123456789"
+                                x:Name="Oboryd_specific"
                            HorizontalOptions="FillAndExpand"
-                           VerticalOptions="FillAndExpand"
+                           AutoSize="TextChanges"
+                           VerticalOptions="Start"
                            TextColor="#ed6e43"/>
-               </StackLayout>
-               <StackLayout>
-                   <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
-                       <Button Text="Удалить" x:Name="Delete_oboryd" HorizontalOptions="Start" TextColor="White" BackgroundColor="#E4410F"/>
-                       <Button Text="Сохранить" x:Name="Save_oboryd" TextColor="White" HorizontalOptions="EndAndExpand" BackgroundColor="#E4410F"/>
-                   </StackLayout>
-               </StackLayout>
-            </StackLayout>
-       </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                            <Button Text="Удалить"
+                                    Clicked ="Delete_oboryd_Clicked"
+                                    CornerRadius="20" Padding="30,0" x:Name="Delete_oboryd" HorizontalOptions="Start" TextColor="White" BackgroundColor="#E4410F"/>
+                            <Button Text="Сохранить"
+                                    Clicked="Save_oboryd_Clicked"
+                                    CornerRadius="20" Padding="30,0" x:Name="Save_oboryd" TextColor="White" HorizontalOptions="EndAndExpand" BackgroundColor="#E4410F"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -43,7 +43,7 @@ namespace VC
                             Name = reader[0].ToString(),
                             Prep_cab = reader[1].ToString(),
                             Number = reader[2].ToString(),
-                            Image = reader[3].ToString(),
+                            Image = reader[3].ToString() == "" ? "https://ukrtb.ru/bitrix/templates/ukrtb/images/slider/slide-2.png" : reader[3].ToString(),
                         });
                     }
                 }

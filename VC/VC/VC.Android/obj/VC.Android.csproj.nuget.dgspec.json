@@ -1,33 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "/Users/macbook/Downloads/VC/VC/VC.Android/VC.Android.csproj": {}
+    "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC.Android\\VC.Android.csproj": {}
   },
   "projects": {
-    "/Users/macbook/Downloads/VC/VC/VC.Android/VC.Android.csproj": {
+    "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC.Android\\VC.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/macbook/Downloads/VC/VC/VC.Android/VC.Android.csproj",
+        "projectUniqueName": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC.Android\\VC.Android.csproj",
         "projectName": "VC.Android",
-        "projectPath": "/Users/macbook/Downloads/VC/VC/VC.Android/VC.Android.csproj",
-        "packagesPath": "/Users/macbook/.nuget/packages/",
-        "outputPath": "/Users/macbook/Downloads/VC/VC/VC.Android/obj/",
+        "projectPath": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC.Android\\VC.Android.csproj",
+        "packagesPath": "C:\\Users\\aidar\\.nuget\\packages\\",
+        "outputPath": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "/Users/macbook/.config/NuGet/NuGet.Config"
+          "C:\\Users\\aidar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "monoandroid90"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "/Users/macbook/Downloads/VC/VC/VC/VC.csproj": {
-                "projectPath": "/Users/macbook/Downloads/VC/VC/VC/VC.csproj"
+              "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC\\VC.csproj": {
+                "projectPath": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC\\VC.csproj"
               }
             }
           }
@@ -52,22 +58,28 @@
         }
       }
     },
-    "/Users/macbook/Downloads/VC/VC/VC/VC.csproj": {
+    "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC\\VC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/macbook/Downloads/VC/VC/VC/VC.csproj",
+        "projectUniqueName": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC\\VC.csproj",
         "projectName": "VC",
-        "projectPath": "/Users/macbook/Downloads/VC/VC/VC/VC.csproj",
-        "packagesPath": "/Users/macbook/.nuget/packages/",
-        "outputPath": "/Users/macbook/Downloads/VC/VC/VC/obj/",
+        "projectPath": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC\\VC.csproj",
+        "packagesPath": "C:\\Users\\aidar\\.nuget\\packages\\",
+        "outputPath": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "/Users/macbook/.config/NuGet/NuGet.Config"
+          "C:\\Users\\aidar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -115,7 +127,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.203/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

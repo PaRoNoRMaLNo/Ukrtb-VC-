@@ -16,10 +16,16 @@ namespace VC
         {
             InitializeComponent();
         }
-
+        internal string equipment_id;
         async void TapGestureRecognizer_Tapped(System.Object sender, System.EventArgs e)
         {
-            await Navigation.PushModalAsync(new Oboryd_open());
+            Oboryd_open oboryd_Open = new Oboryd_open(Cab.Text);
+            oboryd_Open.FindByName<Entry>("Oboryd_number").Text = Equipment_number.Text;
+            oboryd_Open.FindByName<Picker>("Oboryd_cab").SelectedItem = Cab.Text;
+            oboryd_Open.FindByName<Editor>("Oboryd_specific").Text = Equipment_specific.Text;
+            oboryd_Open.FindByName<Editor>("Oboryd_name").Text = Equipment_name.Text;
+            oboryd_Open.equipment_id = equipment_id;
+            await Navigation.PushModalAsync(oboryd_Open);
         }
     }
 }

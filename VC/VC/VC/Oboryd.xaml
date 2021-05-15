@@ -9,14 +9,22 @@
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                 </Grid.GestureRecognizers>
                 <StackLayout>
-                    <Label Text="№323324343" TextColor="White"/>
-                    <Label Text="Видеокарта Geforce Gtx 1050ti" FontSize="Medium" TextColor="White"/>
+                    <Label Text="№323324343" 
+                           x:Name="Equipment_number"
+                           TextColor="White"/>
+                    <Label
+                        x:Name="Equipment_name"
+                        Text="Видеокарта Geforce Gtx 1050ti" FontSize="Medium" TextColor="White"/>
                     
-                    <Label Text="Характеристики : " TextColor="White"/>
+                    <Label 
+                        x:Name="Equipment_specific"
+                        Text="Характеристики : " TextColor="White"/>
                     <Image Source="round_edit_white_24dp.png" HorizontalOptions="EndAndExpand"/>
                 </StackLayout>
                 <StackLayout>
-                    <Label Text="303" TextColor="White" 
+                    <Label Text="303"
+                           x:Name="Cab"
+                           TextColor="White" 
                            HorizontalOptions="EndAndExpand"
                            FontAttributes="Bold"/>
                     

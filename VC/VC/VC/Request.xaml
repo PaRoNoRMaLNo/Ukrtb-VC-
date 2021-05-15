@@ -6,19 +6,29 @@
         <Frame CornerRadius="15" BackgroundColor="#ed6e43">
             <Grid>
                 <StackLayout>
-                    <Label Text="№1" TextColor="White"/>
-                    <Label Text="Маннанов А.К." FontSize="Medium" TextColor="White"/>
+                    <Label Text="№1" 
+                           x:Name="Message_id"
+                           TextColor="White"/>
+                    <Label Text="Маннанов А.К." 
+                           x:Name="Message_prepod"
+                           FontSize="Medium" TextColor="White"/>
 
-                    <Label Text="Заменить всех вц-шников нафиг" TextColor="White"/>
+                    <Label Text="Заменить всех вц-шников нафиг"
+                           x:Name="Message_text"
+                           TextColor="White"/>
                     <Switch HorizontalOptions="Start"  
+                            x:Name="Message_status"
                             IsToggled="False"
                             ThumbColor="#E4410F"
                             />
                     <Label Text="12.05.2020 16:55"
+                           x:Name="Message_date"
                            TextColor="White" HorizontalOptions="End"/>
                 </StackLayout>
                 <StackLayout VerticalOptions="Start">
-                    <Label Text="303" TextColor="White" 
+                    <Label Text="303"
+                           x:Name="Message_cab"
+                           TextColor="White" 
                            HorizontalOptions="EndAndExpand"
                            FontAttributes="Bold"/>
                     

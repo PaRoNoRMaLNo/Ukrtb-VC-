@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:mv="clr-namespace:VC"
+             x:Class="VC.Cab_open_oboryd">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="20,10">
+                <Label Text="Оборудование"
+                           TextColor="#E4410F"
+                           FontAttributes="Bold"
+                           FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Entry Placeholder="Поиск"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="Center"
+                           TextColor="#ed6e43"/>
+            </StackLayout>
+            <StackLayout>
+                <ScrollView VerticalScrollBarVisibility="Never" Margin="20,10">
+                    <StackLayout x:Name="Oboryd_panel">
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

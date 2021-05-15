@@ -20,7 +20,10 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Мастерские" FontAttributes="Bold" FontSize="Medium" Margin="20,0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" TextColor="#000000"/>
-                <Button Text="Показать все" FontAttributes="None" BackgroundColor="Transparent"  HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" TextColor="#ff7f5c"/>
+                <Button Text="Показать все"
+                        x:Name="All_cab"
+                        Clicked="All_cab_Clicked"
+                        FontAttributes="None" BackgroundColor="Transparent"  HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" TextColor="#ff7f5c"/>
 
             </StackLayout>
             <CarouselView ItemsSource="{Binding cabinet}" HeightRequest="200"  PeekAreaInsets="60">
@@ -54,7 +57,13 @@
                 <Frame Margin="20,0" CornerRadius="15" BackgroundColor="#ed6e43" HasShadow="True">
                     <StackLayout Orientation="Horizontal">
                         <Image Source="baseline_receipt_long_white_24dp.png" HorizontalOptions="Start" Margin="20,0"/>
-                        <Label Text="Заявки" FontSize="Medium" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
+                        <Label Text="Расписание" 
+                               x:Name="Rasp"
+                               FontSize="Medium" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
                     </StackLayout>
                 </Frame>
             </StackLayout>
@@ -67,16 +76,20 @@
                 </Frame>
             </StackLayout>
             <StackLayout VerticalOptions="Start">
-                <Frame Margin="20,0" CornerRadius="15" BackgroundColor="#ed6e43" HasShadow="True">
+                <Frame Margin="20,0" CornerRadius="15" BackgroundColor="#ed6e43" HasShadow="True"
+                       x:Name="Site_ukrtb">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_3"/>
+                    </Frame.GestureRecognizers>
                     <StackLayout Orientation="Horizontal">
                         <Image Source="baseline_language_white_24dp.png" HorizontalOptions="Start" Margin="20,0"/>
-                        <Label Text="Сайт УКРТБ" FontSize="Medium" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
+                        <Label Text="Сайт УКРТБ"  FontSize="Medium" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
                     </StackLayout>
                 </Frame>
             </StackLayout>
         </StackLayout>
     </ContentPage>
-    <ContentPage Title="Кабинеты"  IconImageSource="round_school_white_24dp.png">
+    <ContentPage Title="Кабинеты" x:Name="Page_cab" IconImageSource="round_school_white_24dp.png" Appearing="ContentPage_Appearing">
         <Grid>
             <StackLayout>
                 <Label Text="Кабинеты"
@@ -91,7 +104,7 @@
                     <Picker.Items>
                         <x:String>Все</x:String>
                     </Picker.Items>
-                    </Picker>
+                </Picker>
                 <ScrollView  Margin="20" VerticalOptions="Start" VerticalScrollBarVisibility="Never">
                     <StackLayout x:Name="Cabinet_panel">
                         <mv:View1></mv:View1>
@@ -101,6 +114,15 @@
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
+            <StackLayout VerticalOptions="End">
+                <Frame Padding="0" HeightRequest="50" WidthRequest="50" CornerRadius="25" BackgroundColor="#E4410F" HorizontalOptions="End" Margin="10,5">
+                    <Image Source="round_add_white_24dp.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+            </StackLayout>
             <ActivityIndicator 
                 x:Name="Load_activity"
                 IsEnabled="True" 
@@ -109,7 +131,7 @@
                 VerticalOptions="Center"/>
         </Grid>
     </ContentPage>
-    <ContentPage Title="Оборудование" IconImageSource="baseline_construction_white_24dp.png">
+    <ContentPage Title="Оборудование" IconImageSource="baseline_construction_white_24dp.png" Appearing="ContentPage_Appearing_1">
         <Grid>
             <StackLayout>
                 <Label Text="Оборудование"
@@ -120,34 +142,34 @@
                 <Entry Placeholder="Поиск оборудования" 
                        TextColor="#E4410F" 
                    FontAttributes="None" Margin="20,0" 
-                       x:Name="Search_obor"/>
+                       x:Name="Search_obor" TextChanged="Search_obor_TextChanged"/>
                 <ScrollView  Margin="20,0" 
-                             VerticalOptions="EndAndExpand"
+                             VerticalOptions="StartAndExpand"
                              VerticalScrollBarVisibility="Never">
-                    <StackLayout>
-                        <mv:Oboryd/>
-                        <mv:Oboryd/>
-                        <mv:Oboryd/>
-                        <mv:Oboryd/>
-                        <mv:Oboryd/>
-                        <mv:Oboryd/>
+                    <StackLayout x:Name="Oboryd_panel" >
+
                     </StackLayout>
                 </ScrollView>
                
             </StackLayout>
             <StackLayout VerticalOptions="End">
                 <Frame Padding="0" HeightRequest="50" WidthRequest="50" CornerRadius="25" BackgroundColor="#E4410F" HorizontalOptions="End" Margin="10,5">
-                    <Image Source="round_add_white_24dp.png"/>
+                    <Image Source="round_add_white_24dp.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                        </Image.GestureRecognizers>
+                    </Image>
                 </Frame>
             </StackLayout>
             <ActivityIndicator 
                 IsEnabled="True" 
                 IsRunning="False" 
+                x:Name="Load_activ_oboryd"
                 HorizontalOptions="Center" 
                 VerticalOptions="Center"/>
         </Grid>
     </ContentPage>
-    <ContentPage Title="Заявки" IconImageSource="baseline_receipt_long_white_24dp.png">
+    <ContentPage Title="Заявки" x:Name="Messages_page" Appearing="Messages_page_Appearing" IconImageSource="baseline_receipt_long_white_24dp.png">
         <Grid>
             <StackLayout>
                 <Label Text="Заявки"
@@ -157,27 +179,20 @@
                    Margin="20"/>
                 <DatePicker 
                        TextColor="#E4410F" 
+                        x:Name="Date_Messages"
+                    DateSelected="Date_Messages_DateSelected"
                    FontAttributes="None" Margin="20,0" />
                 <ScrollView  Margin="20,0" 
-                             VerticalOptions="EndAndExpand"
+                             VerticalOptions="StartAndExpand"
                              VerticalScrollBarVisibility="Never">
-                    <StackLayout>
-                        <mv:Request/>
-                        <mv:Request/>
-                        <mv:Request/>
-                        <mv:Request/>
-                        <mv:Request/>
+                    <StackLayout x:Name="Message_panel">
                     </StackLayout>
                 </ScrollView>
 
             </StackLayout>
-            <StackLayout VerticalOptions="End">
-                <Frame Padding="0" Opacity="1" HeightRequest="50" WidthRequest="50" CornerRadius="25" BackgroundColor="#E4410F" HorizontalOptions="End" Margin="10,5">
-                    <Image Source="round_update_white_24dp.png"/>
-                </Frame>
-            </StackLayout>
             <ActivityIndicator 
                 IsEnabled="True" 
+                x:Name="Activ_indicator_messages"
                 IsRunning="False" 
                 HorizontalOptions="Center" 
                 VerticalOptions="Center"/>

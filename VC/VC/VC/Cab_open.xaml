@@ -4,68 +4,145 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:mv="clr-namespace:VC"
     x:Class="VC.Cab_open">
     <ContentPage.Content>
-        <StackLayout>
+        <Grid>
             <StackLayout>
-                <Frame CornerRadius="15" Padding="0"
+                <ActivityIndicator 
+                IsEnabled="True" 
+                IsRunning="False" 
+                x:Name="Activ_indicator_cab"
+                HorizontalOptions="Center" 
+                VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout>
+               
+                <StackLayout>
+                    <Frame CornerRadius="15" Padding="0"
                    Margin="0,-15,0,0" HasShadow="False"
                        BackgroundColor="Red"
                        VerticalOptions="Start">
-                    <Grid>
-                        <StackLayout>
+                        <Grid>
                             <StackLayout>
-                                <Image Source="https://ukrtb.ru/workshops/img/gallery/308/1.jpg"
+                                <StackLayout>
+                                    <Image Source="https://ukrtb.ru/bitrix/templates/ukrtb/images/slider/slide-2.png"
                                        VerticalOptions="Start"
                                        Aspect="AspectFill"
                                        x:Name="Cab_image" />
+                                </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                        <StackLayout VerticalOptions="End">
-                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="20,0">
-                                <Label Text="Количество мест: 20" HorizontalOptions="StartAndExpand"
+
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+                <StackLayout VerticalOptions="Start">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Margin="20,0">
+                        <Editor Text="" 
+                           x:Name="Cab_name"
+                            AutoSize="TextChanges"
+                           Placeholder="Название"
+                                MaxLength="200"
+                           TextColor="#ed6e43"
+                           HorizontalOptions="FillAndExpand" 
+                           VerticalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" x:Name="Number_panel" IsVisible="false" HorizontalOptions="FillAndExpand" Margin="20,0">
+                        <Label Text="Номер кабинета:" HorizontalOptions="Start"
                                        FontAttributes="Bold"
-                                       TextColor="White"
+                                       TextColor="Black"
+                                       FontSize="Medium" 
+                                        VerticalOptions="Center"/>
+                        <Entry Text="" 
+                           x:Name="Cab_number"
+                           Placeholder="101"
+                           TextColor="#ed6e43"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="20,0">
+                        <Label Text="Количество мест:" HorizontalOptions="Start"
+                                       FontAttributes="Bold"
+                                       TextColor="Black"
+                                       FontSize="Medium" 
+                                        VerticalOptions="Center"/>
+                        <Entry Text="" 
+                           x:Name="Cab_count_stud"
+                           Placeholder="99"
+                           Keyboard="Numeric"
+                           TextColor="#ed6e43"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+
+                    </StackLayout>
+                    <StackLayout Margin="20,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Label Text="Этаж:" HorizontalOptions="Start"
+                                        VerticalOptions="Center"
+                                       
+                                       FontAttributes="Bold"
+                                       TextColor="Black"
                                        FontSize="Medium"/>
-                                <Label Text="Этаж: 3" HorizontalOptions="EndAndExpand"
+                        <Picker
+                        x:Name="Cab_etaz"
+                           TextColor="#ed6e43"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                            <Picker.Items>
+                                <x:String>1</x:String>
+                                <x:String>2</x:String>
+                                <x:String>3</x:String>
+                                <x:String>4</x:String>
+                                <x:String>5</x:String>
+                                <x:String>6</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                    <StackLayout Margin="20,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Label Text="Преподаватель:"
+                                       HorizontalOptions="Start"
                                        FontAttributes="Bold"
-                                       TextColor="White"
+                                       TextColor="Black"
+                                       VerticalOptions="Center"
                                        FontSize="Medium"/>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" Margin="20,0,20,10">
-                                <Label Text="Преподаватель: Сафаров В.М."
-                                       HorizontalOptions="StartAndExpand"
+                        <Entry Text="" 
+                            MaxLength="100"
+                           Placeholder="Иванов И.И."
+                           x:Name="Cab_prepod"
+                           TextColor="#ed6e43"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+
+                    </StackLayout>
+                    <StackLayout Margin="20,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Label Text="Мастерская:"
+                                       HorizontalOptions="Start"
                                        FontAttributes="Bold"
-                                       TextColor="White"
-                                       FontSize="Default"/>
-                                <Label Text="Мастерская: Да"
-                                       HorizontalOptions="EndAndExpand"
-                                       FontAttributes="Bold"
-                                       TextColor="White"
-                                       FontSize="Default"/>
-                            </StackLayout>
-                        </StackLayout>
-                    </Grid>
-                </Frame>
+                                       TextColor="Black"
+                                       VerticalOptions="Center"
+                                       FontSize="Medium"/>
+                        <Picker
+                           TextColor="#ed6e43"
+                        x:Name="Cab_master"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                            <Picker.Items>
+                                <x:String>Нет</x:String>
+                                <x:String>Да</x:String>
+                            </Picker.Items>
+                        </Picker>
+
+                    </StackLayout>
+                    <Button Text="Оборудование" x:Name="Open_cab_oboryd" 
+                        CornerRadius="20" Margin="20,0"
+                        Padding="30,0" 
+                        Clicked="Open_cab_oboryd_Clicked"
+                        HorizontalOptions="FillAndExpand" TextColor="White" 
+                        BackgroundColor="#E4410F"/>
+                </StackLayout>
+                <StackLayout Margin="20" VerticalOptions="EndAndExpand">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                        <Button Text="Отмена"
+                           Clicked="Cancel_Clicked"
+                            CornerRadius="20" Padding="30,0" x:Name="Cancel" HorizontalOptions="Start" TextColor="White" BackgroundColor="#E4410F"/>
+                        <Button Text="Сохранить"
+                            Clicked="Save_cab_Clicked"
+                            CornerRadius="20" Padding="30,0" x:Name="Save_cab" TextColor="White" HorizontalOptions="EndAndExpand" BackgroundColor="#E4410F"/>
+                    </StackLayout>
+                </StackLayout>
             </StackLayout>
-           <StackLayout Orientation="Horizontal" Margin="20,10">
-                    <Label Text="Оборудование"
-                           TextColor="#E4410F"
-                           FontAttributes="Bold"
-                           FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <Entry Placeholder="Поиск"
-                           HorizontalOptions="FillAndExpand"
-                           VerticalOptions="Center"
-                           TextColor="#ed6e43"/>
-            </StackLayout>
-            <StackLayout>
-                <ScrollView VerticalScrollBarVisibility="Never" Margin="20,10">
-                    <StackLayout>
-                         <mv:Oboryd/>
-                         <mv:Oboryd/>
-                         <mv:Oboryd/>
-                         <mv:Oboryd/>
-                     </StackLayout>
-                </ScrollView>
-            </StackLayout>
-       </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -1,27 +1,20 @@
 ﻿<Properties StartupConfiguration="{0E77133D-4BD3-4E5D-AE6D-F32138C07137}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="VC/VC/Oboryd_open.xaml">
+  <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="VC/VC/MainPage.xaml" Line="11" Column="13" />
       <File FileName="VC/VC/MainPage.xaml.cs" />
-      <File FileName="VC/VC/Oboryd_open.xaml" Line="83" Column="120" />
-      <File FileName="VC/VC/Oboryd_open.xaml.cs" Line="10" Column="26" />
-      <File FileName="VC/VC/Oboryd.xaml" Line="9" Column="78" />
-      <File FileName="VC/VC/View1.xaml" Line="8" Column="16" />
-      <File FileName="VC/VC/Oboryd.xaml.cs" Line="23" Column="10" />
+      <File FileName="VC/VC/Oboryd_open.xaml" Line="83" Column="69" />
+      <File FileName="VC/VC/Oboryd_open.xaml.cs" Line="10" Column="6" />
+      <File FileName="VC/VC/Oboryd.xaml" />
+      <File FileName="VC/VC/View1.xaml" />
+      <File FileName="VC/VC/Oboryd.xaml.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="VC" expanded="True">
-            <Node name="VC" expanded="True">
-              <Node name="Oboryd.xaml" expanded="True" />
-              <Node name="Oboryd_open.xaml" expanded="True" selected="True" />
-            </Node>
-            <Node name="VC.Android" expanded="True">
-              <Node name="Resources" expanded="True">
-                <Node name="drawable" expanded="True" />
-              </Node>
-            </Node>
+            <Node name="VC" expanded="True" />
+            <Node name="VC.Android" expanded="True" selected="True" />
           </Node>
         </State>
       </Pad>

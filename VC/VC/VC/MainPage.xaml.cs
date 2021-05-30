@@ -18,7 +18,6 @@ namespace VC
             InitializeComponent();
             Load_cabs();
         }
-
         private async Task<string> Load_cab(string cab)
         {
             Cabinet_panel.Children.Clear();
@@ -58,6 +57,45 @@ namespace VC
             return "";
         }
 
+        private List<View1> Load_cab_psevdoasync(string cab)
+        {
+            List<View1> view1s = new List<View1>();
+          
+            using (MySqlConnection connection = new MySqlConnection(Connect.String))
+            {
+
+                connection.Open();
+                MySqlCommand command = new MySqlCommand($"SELECT Cab_name,Cab_prepod,Cab_number,Cab_image,Cab_master,Cab_etaz,Cab_count_stud FROM VC_Cab where Cab_number like '%{cab}%'", connection);
+                MySqlDataReader reader =  command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while ( reader.Read())
+                    {
+                        View1 view1 = new View1();
+                        view1.FindByName<Label>("Name_cab").Text =  reader[0].ToString();
+                        view1.FindByName<Label>("Number_cab").Text =  reader[2].ToString();
+                        view1.FindByName<Label>("Prep_cab").Text =  reader[1].ToString();
+                        try
+                        {
+                            view1.FindByName<Image>("Image_cab").Source =  reader[3].ToString();
+                        }
+                        catch
+                        {
+                        }
+
+                        view1.Cab_master =  Convert.ToBoolean(reader[4].ToString());
+                        view1.Cab_etaz = int.Parse(reader[5].ToString());
+                        view1.Cab_count_stud = int.Parse(reader[6].ToString());
+                        //Cabinet_panel.Children.Add(view1);
+                        view1s.Add(view1);
+                    }
+                }
+            }
+            return view1s;
+        }
+
+
+
         private void Load_cabs()
         {
             using (MySqlConnection connection = new MySqlConnection("server=mysql77.hostland.ru;userid=host1821757_manan;database=host1821757_manandb;password=Id564876681;"))
@@ -81,69 +119,79 @@ namespace VC
 
         async void Search_cabinet_SelectedIndexChanged(System.Object sender, System.EventArgs e)
         {
-            Load_activity.IsRunning = true;
+             Cabinet_panel.Children.Clear();
+            Load_activity.PlayAnimation();
+            Load_activity.IsVisible = true;
+            await Task.Delay(1000);
             if (Search_cabinet.Items[Search_cabinet.SelectedIndex].ToString() == "Все")
             {
-                await Load_cab("");
+                //await Load_cab("");
+                foreach (View1 view in await Task.Run(() => Load_cab_psevdoasync("")))
+                    Cabinet_panel.Children.Add(view);
+               
             }
             else
             {
-                await Load_cab(Search_cabinet.Items[Search_cabinet.SelectedIndex].ToString());
+                foreach (View1 view in await Task.Run(() => Load_cab_psevdoasync(Search_cabinet.Items[Search_cabinet.SelectedIndex].ToString())))
+                    Cabinet_panel.Children.Add(view);
+                //await Task.Run(()=>Load_cab_psevdoasync(Search_cabinet.Items[Search_cabinet.SelectedIndex].ToString()));
+                //await Load_cab(Search_cabinet.Items[Search_cabinet.SelectedIndex].ToString());
             }
-
-            Load_activity.IsRunning = false;
+            Load_activity.IsVisible = false;
+            Load_activity.StopAnimation();
         }
 
-        private async Task<string> Load_oboryd(string oboryd_search)
+        private List<Oboryd> Load_oboryd(string oboryd_search)
         {
-            Oboryd_panel.Children.Clear();
+            List<Oboryd> oboryds = new List<Oboryd>();
             using (MySqlConnection connection = new MySqlConnection(Connect.String))
             {
-
                 connection.Open();
                 MySqlCommand command = new MySqlCommand($@"SELECT `Equipment_number`,`Equipment_name`,`Equipment_specific`, VC_Cab.Cab_number,`Equipment_id` FROM `VC_Equipment` 
                             INNER join VC_Cab on Equipment_cab_id = VC_Cab.Cab_id 
                                 where 	`Equipment_number` like '%{oboryd_search}%' 
                                 or `Equipment_name` like '%{oboryd_search}%' 
                                 or `Equipment_specific` like '%{oboryd_search}%'", connection);
-                MySqlDataReader reader = await command.ExecuteReaderAsync();
+                MySqlDataReader reader =  command.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    while (await reader.ReadAsync())
+                    while (reader.Read())
                     {
                         Oboryd oboryd = new Oboryd();
-                        oboryd.FindByName<Label>("Equipment_number").Text = await reader.GetFieldValueAsync<string>(0);
-                        oboryd.FindByName<Label>("Equipment_name").Text = await reader.GetFieldValueAsync<string>(1);
-                        oboryd.FindByName<Label>("Equipment_specific").Text = await reader.GetFieldValueAsync<string>(2);
-                        oboryd.FindByName<Label>("Cab").Text = await reader.GetFieldValueAsync<string>(3);
-                        oboryd.equipment_id = Convert.ToString(await reader.GetFieldValueAsync<int>(4));
-                        Oboryd_panel.Children.Add(oboryd);
+                        oboryd.FindByName<Label>("Equipment_number").Text = reader[0].ToString();
+                        oboryd.FindByName<Label>("Equipment_name").Text = reader[1].ToString();
+                        oboryd.FindByName<Label>("Equipment_specific").Text = reader[2].ToString();
+                        oboryd.FindByName<Label>("Cab").Text = reader[3].ToString();
+                        oboryd.equipment_id = reader[4].ToString();
+                        oboryds.Add(oboryd);
                     }
                 }
-                else
-                {
-                    return "";
-                }
+
             }
-            return "";
+            return oboryds;
         }
         private async void Search_obor_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Load_activ_oboryd.IsRunning = true;
-                await Load_oboryd(Search_obor.Text);
-            Load_activ_oboryd.IsRunning = false;
+            Oboryd_panel.Children.Clear();
+            Load_activ_oboryd.PlayAnimation();
+            Load_activ_oboryd.IsVisible = true;
+                //await Load_cab("");
+                foreach (Oboryd view in await Task.Run(() => Load_oboryd(Search_obor.Text)))
+                    Oboryd_panel.Children.Add(view);
+            Load_activ_oboryd.IsVisible = false;
+            Load_activ_oboryd.StopAnimation();
         }
 
         private void ContentPage_Appearing(object sender, EventArgs e)
         {
-            Search_cabinet_SelectedIndexChanged(sender, e);
+            //Search_cabinet_SelectedIndexChanged(sender, e);
         }
 
-        private async void ContentPage_Appearing_1(object sender, EventArgs e)
+        private  void ContentPage_Appearing_1(object sender, EventArgs e)
         {
-            Load_activ_oboryd.IsRunning = true;
-                await Load_oboryd(Search_obor.Text);
-            Load_activ_oboryd.IsRunning = false;
+            //Load_activ_oboryd.IsRunning = true;
+            //    await Load_oboryd(Search_obor.Text);
+            //Load_activ_oboryd.IsRunning = false;
         }
 
         private void All_cab_Clicked(object sender, EventArgs e)
@@ -168,55 +216,61 @@ namespace VC
             await Navigation.PushModalAsync(cab_Open);
         }
 
-        private async Task<string> Load_message(DateTime date)
+        private List<Request> Load_message(DateTime date)
         {
-            Message_panel.Children.Clear();
+            List<Request> requests = new List<Request>();
             using (MySqlConnection connection = new MySqlConnection(Connect.String))
             {
 
                 connection.Open();
                 MySqlCommand command = new MySqlCommand($@"SELECT * FROM `Message_VC` where `Message_date` between '{date.Year}-{date.Month}-{date.Day} 00:00:00' and '{date.Year}-{date.Month}-{date.Day} 23:59:59'", connection);
-                MySqlDataReader reader = await command.ExecuteReaderAsync();
+                MySqlDataReader reader = command.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    while (await reader.ReadAsync())
+                    while (reader.Read())
                     {
                         Request request = new Request();
-                        request.FindByName<Label>("Message_id").Text = Convert.ToString(await reader.GetFieldValueAsync<int>(0));
-                        request.FindByName<Label>("Message_prepod").Text = await reader.GetFieldValueAsync<string>(1);
-                        request.FindByName<Label>("Message_text").Text = await reader.GetFieldValueAsync<string>(2);
-                        request.FindByName<Label>("Message_date").Text = Convert.ToDateTime(await reader.GetFieldValueAsync<DateTime>(3)).ToString();
-                        request.FindByName<Switch>("Message_status").IsToggled = await reader.GetFieldValueAsync<string>(4) == "Выполнен" ? true : false;
-                        request.FindByName<Label>("Message_cab").Text = await reader.GetFieldValueAsync<string>(5);
-                        Message_panel.Children.Add(request);
+                        request.FindByName<Label>("Message_id").Text = reader[0].ToString();
+                        request.FindByName<Label>("Message_prepod").Text = reader[1].ToString();
+                        request.FindByName<Label>("Message_text").Text = reader[2].ToString();
+                        request.FindByName<Label>("Message_date").Text = Convert.ToDateTime(reader[3].ToString()).ToString();
+                        request.FindByName<Switch>("Message_status").IsToggled = reader[4].ToString() == "Выполнен" ? true : false;
+                        request.FindByName<Label>("Message_cab").Text = reader[5].ToString();
+                        requests.Add(request);
                     }
                 }
-                else
-                {
-                    return "";
-                }
+                return requests;
             }
-            return "";
         }
 
 
         private async void Date_Messages_DateSelected(object sender, DateChangedEventArgs e)
         {
-            Activ_indicator_messages.IsRunning = true;
-                await Load_message(Date_Messages.Date);
-            Activ_indicator_messages.IsRunning = false;
+            Message_panel.Children.Clear();
+            Activ_indicator_messages.PlayAnimation();
+            Activ_indicator_messages.IsVisible = true;
+            await Task.Delay(1000);
+            foreach (Request view in await Task.Run(() => Load_message(Date_Messages.Date)))
+                Message_panel.Children.Add(view);
+            Activ_indicator_messages.IsVisible = false;
+            Activ_indicator_messages.StopAnimation();
         }
 
         private async void Messages_page_Appearing(object sender, EventArgs e)
         {
-            Activ_indicator_messages.IsRunning = true;
-                await Load_message(Date_Messages.Date);
-            Activ_indicator_messages.IsRunning = false;
+            //Activ_indicator_messages.IsRunning = true;
+            //    await Load_message(Date_Messages.Date);
+            //Activ_indicator_messages.IsRunning = false;
         }
 
         private async void TapGestureRecognizer_Tapped_3(object sender, EventArgs e)
         {
             await Browser.OpenAsync(new Uri("https://ukrtb.ru/"));
+        }
+
+        async void TapGestureRecognizer_Tapped_4(System.Object sender, System.EventArgs e)
+        {
+            await Browser.OpenAsync(new Uri("https://ukrtb.ru/all_news.php"));
         }
     }
 }

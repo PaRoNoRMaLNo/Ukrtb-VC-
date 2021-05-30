@@ -18,13 +18,13 @@
           "/Users/macbook/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "monoandroid90"
+          "monoandroid11.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "monoandroid90": {
+          "monoandroid11.0": {
             "projectReferences": {
               "/Users/macbook/Documents/GitHub/Ukrtb-VC-/VC/VC/VC/VC.csproj": {
                 "projectPath": "/Users/macbook/Documents/GitHub/Ukrtb-VC-/VC/VC/VC/VC.csproj"
@@ -34,19 +34,23 @@
         }
       },
       "frameworks": {
-        "monoandroid90": {
+        "monoandroid11.0": {
           "dependencies": {
+            "Com.Airbnb.Xamarin.Forms.Lottie": {
+              "target": "Package",
+              "version": "[4.0.9, )"
+            },
             "MySqlConnector": {
               "target": "Package",
               "version": "[1.3.8, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.5.3.2, )"
+              "version": "[1.6.1, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.8.0.1451, )"
+              "version": "[5.0.0.2012, )"
             }
           }
         }
@@ -86,6 +90,10 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "Com.Airbnb.Xamarin.Forms.Lottie": {
+              "target": "Package",
+              "version": "[4.0.9, )"
+            },
             "MySqlConnector": {
               "target": "Package",
               "version": "[1.3.8, )"
@@ -98,11 +106,11 @@
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.5.3.2, )"
+              "version": "[1.6.1, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.8.0.1451, )"
+              "version": "[5.0.0.2012, )"
             }
           },
           "imports": [

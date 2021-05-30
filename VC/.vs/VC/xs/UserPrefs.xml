@@ -1,27 +1,33 @@
 ﻿<Properties StartupConfiguration="{0E77133D-4BD3-4E5D-AE6D-F32138C07137}|Default">
   <MonoDevelop.Ide.Workbench>
-    <Files>
-      <File FileName="VC/VC/MainPage.xaml" Line="11" Column="13" />
-      <File FileName="VC/VC/MainPage.xaml.cs" />
-      <File FileName="VC/VC/Oboryd_open.xaml" Line="83" Column="69" />
-      <File FileName="VC/VC/Oboryd_open.xaml.cs" Line="10" Column="6" />
-      <File FileName="VC/VC/Oboryd.xaml" />
-      <File FileName="VC/VC/View1.xaml" />
-      <File FileName="VC/VC/Oboryd.xaml.cs" />
-    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="VC" expanded="True">
-            <Node name="VC" expanded="True" />
-            <Node name="VC.Android" expanded="True" selected="True" />
+            <Node name="VC" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Cab_open.xaml" expanded="True" />
+              <Node name="MainPage.xaml" expanded="True" />
+              <Node name="Oboryd_open.xaml" expanded="True" />
+            </Node>
+            <Node name="VC.Android" expanded="True">
+              <Node name="Assets" expanded="True" />
+              <Node name="Resources" expanded="True">
+                <Node name="layout" expanded="True">
+                  <Node name="splash.xml" selected="True" />
+                </Node>
+                <Node name="values" expanded="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.VC.Android PreferredExecutionTarget="Android.pixel_3_xl_q_10_0_-_api_29" Xamarin.HotReload.UnhandledDeviceException.VC.Android.HideInfoBar="True" />
+  <MonoDevelop.Ide.ItemProperties.VC.Android AndroidDesignerPreferredTheme="MainTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.a728dfb9" Xamarin.HotReload.UnhandledDeviceException.VC.Android.HideInfoBar="True" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

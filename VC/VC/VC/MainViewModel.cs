@@ -26,14 +26,14 @@ namespace VC
             }
         }
 
-        private void Load_cab_master()
+        private void Load_cab_master_async()
         {
             using (MySqlConnection connection = new MySqlConnection("server=mysql77.hostland.ru;userid=host1821757_manan;database=host1821757_manandb;password=Id564876681;"))
             {
-                
-                 connection.Open();
+
+                connection.Open();
                 MySqlCommand command = new MySqlCommand("SELECT Cab_name,Cab_prepod,Cab_number,Cab_image FROM VC_Cab where Cab_master = 1", connection);
-                MySqlDataReader reader =  command.ExecuteReader();
+                MySqlDataReader reader = command.ExecuteReader();
                 if (reader.HasRows)
                 {
                     while (reader.Read())
@@ -47,8 +47,13 @@ namespace VC
                         });
                     }
                 }
-               
+
             }
+        }
+
+        private async void Load_cab_master()
+        {
+            await Task.Run(()=>Load_cab_master_async());
         }
         //private void DoSimpleCommand()
         //{

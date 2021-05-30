@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app ="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    >
+    <com.airbnb.lottie.LottieAnimationView
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+        android:layout_gravity="center"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="isometric-buildup-i.json"
+        app:lottie_repeatMode="restart"
+        app:lottie_loop="false"/>
+</LinearLayout>

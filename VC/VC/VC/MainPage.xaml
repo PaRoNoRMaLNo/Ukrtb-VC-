@@ -2,11 +2,10 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:mv="clr-namespace:VC"
             x:Class="VC.MainPage"
-             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
             android:TabbedPage.ToolbarPlacement="Bottom"
             UnselectedTabColor="#ed6e43"
-            SelectedTabColor="#E4410F" IconImageSource="" 
-            >
+            SelectedTabColor="#E4410F" IconImageSource="">
 
     <ContentPage Title="Дом" IconImageSource="home_icon.png">
         <ContentPage.BindingContext>
@@ -15,15 +14,18 @@
         <StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Image Source="logo.png" HorizontalOptions="Start" WidthRequest="50" Margin="20,10"/>
-                <Label Text="Вычислительный центр" FontAttributes="Bold"  TextColor="#E4410F" FontSize="24" Margin="0" VerticalOptions="Center"/>
+                <Label Text="Вычислительный центр" FontAttributes="Bold"  TextColor="#E4410F" FontSize="24"
+                       Margin="0" VerticalOptions="Center"/>
                 
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Мастерские" FontAttributes="Bold" FontSize="Medium" Margin="20,0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" TextColor="#000000"/>
+                <Label Text="Мастерские" FontAttributes="Bold" FontSize="Medium" Margin="20,0" HorizontalOptions="StartAndExpand"
+                       VerticalOptions="CenterAndExpand" TextColor="#000000"/>
                 <Button Text="Показать все"
                         x:Name="All_cab"
                         Clicked="All_cab_Clicked"
-                        FontAttributes="None" BackgroundColor="Transparent"  HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" TextColor="#ff7f5c"/>
+                        FontAttributes="None" BackgroundColor="Transparent"  HorizontalOptions="EndAndExpand"
+                        VerticalOptions="CenterAndExpand" TextColor="#ff7f5c"/>
 
             </StackLayout>
             <CarouselView ItemsSource="{Binding cabinet}" HeightRequest="200"  PeekAreaInsets="60">
@@ -33,7 +35,8 @@
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
-                            <Frame HasShadow="True" BorderColor="DarkGray" CornerRadius="15" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0">
+                            <Frame HasShadow="True" BorderColor="DarkGray" CornerRadius="15" HorizontalOptions="FillAndExpand"
+                                   VerticalOptions="FillAndExpand" Padding="0">
                                 <Grid Padding="0" BackgroundColor="Black" x:Name="Main_Grid">
 
                                     <StackLayout  Padding="0">
@@ -69,9 +72,12 @@
             </StackLayout>
             <StackLayout VerticalOptions="Start">
                 <Frame Margin="20,0" CornerRadius="15" BackgroundColor="#ed6e43" HasShadow="True">
+                     <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_4"/>
+                    </Frame.GestureRecognizers>
                     <StackLayout Orientation="Horizontal">
                         <Image Source="baseline_receipt_long_white_24dp.png" HorizontalOptions="Start" Margin="20,0"/>
-                        <Label Text="Оборудование" FontSize="Medium" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
+                        <Label Text="Новости" FontSize="Medium" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
                     </StackLayout>
                 </Frame>
             </StackLayout>
@@ -107,10 +113,6 @@
                 </Picker>
                 <ScrollView  Margin="20" VerticalOptions="Start" VerticalScrollBarVisibility="Never">
                     <StackLayout x:Name="Cabinet_panel">
-                        <mv:View1></mv:View1>
-                        <mv:View1></mv:View1>
-                        <mv:View1></mv:View1>
-                        <mv:View1></mv:View1>
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
@@ -123,12 +125,15 @@
                     </Image>
                 </Frame>
             </StackLayout>
-            <ActivityIndicator 
-                x:Name="Load_activity"
-                IsEnabled="True" 
-                IsRunning="False" 
+            <lottie:AnimationView 
+                AutoPlay="False"
+                IsEnabled="True"
+                IsVisible="false"
+                Animation="7bglight.json"
+                RepeatMode="Infinite"
                 HorizontalOptions="Center" 
-                VerticalOptions="Center"/>
+                VerticalOptions="Center"
+                x:Name="Load_activity"/>
         </Grid>
     </ContentPage>
     <ContentPage Title="Оборудование" IconImageSource="baseline_construction_white_24dp.png" Appearing="ContentPage_Appearing_1">
@@ -161,12 +166,15 @@
                     </Image>
                 </Frame>
             </StackLayout>
-            <ActivityIndicator 
-                IsEnabled="True" 
-                IsRunning="False" 
-                x:Name="Load_activ_oboryd"
+            <lottie:AnimationView 
+                AutoPlay="False"
+                IsEnabled="True"
+                IsVisible="false"
+                Animation="7bglight.json"
+                RepeatMode="Infinite"
                 HorizontalOptions="Center" 
-                VerticalOptions="Center"/>
+                VerticalOptions="Center"
+                x:Name="Load_activ_oboryd"/>
         </Grid>
     </ContentPage>
     <ContentPage Title="Заявки" x:Name="Messages_page" Appearing="Messages_page_Appearing" IconImageSource="baseline_receipt_long_white_24dp.png">
@@ -190,12 +198,15 @@
                 </ScrollView>
 
             </StackLayout>
-            <ActivityIndicator 
-                IsEnabled="True" 
-                x:Name="Activ_indicator_messages"
-                IsRunning="False" 
+            <lottie:AnimationView 
+                AutoPlay="False"
+                IsEnabled="True"
+                IsVisible="false"
+                Animation="7bglight.json"
+                RepeatMode="Infinite"
                 HorizontalOptions="Center" 
-                VerticalOptions="Center"/>
+                VerticalOptions="Center"
+                x:Name="Activ_indicator_messages"/>
         </Grid>
     </ContentPage>
 </TabbedPage>

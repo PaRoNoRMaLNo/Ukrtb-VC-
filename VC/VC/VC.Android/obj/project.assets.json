@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "MonoAndroid,Version=v11.0": {
+    "MonoAndroid,Version=v10.0": {
       "Com.Airbnb.Android.Lottie/3.6.1": {
         "type": "package",
         "dependencies": {
@@ -2290,7 +2290,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "MonoAndroid,Version=v11.0": [
+    "MonoAndroid,Version=v10.0": [
       "Com.Airbnb.Xamarin.Forms.Lottie >= 4.0.9",
       "MySqlConnector >= 1.3.8",
       "VC >= 1.0.0",
@@ -2299,39 +2299,46 @@
     ]
   },
   "packageFolders": {
-    "/Users/macbook/.nuget/packages/": {}
+    "C:\\Users\\aidar\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/macbook/Documents/GitHub/Ukrtb-VC-/VC/VC/VC.Android/VC.Android.csproj",
+      "projectUniqueName": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC.Android\\VC.Android.csproj",
       "projectName": "VC.Android",
-      "projectPath": "/Users/macbook/Documents/GitHub/Ukrtb-VC-/VC/VC/VC.Android/VC.Android.csproj",
-      "packagesPath": "/Users/macbook/.nuget/packages/",
-      "outputPath": "/Users/macbook/Documents/GitHub/Ukrtb-VC-/VC/VC/VC.Android/obj/",
+      "projectPath": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC.Android\\VC.Android.csproj",
+      "packagesPath": "C:\\Users\\aidar\\.nuget\\packages\\",
+      "outputPath": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "/Users/macbook/.config/NuGet/NuGet.Config"
+        "C:\\Users\\aidar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "monoandroid11.0"
+        "monoandroid10.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "monoandroid11.0": {
+        "monoandroid10.0": {
           "projectReferences": {
-            "/Users/macbook/Documents/GitHub/Ukrtb-VC-/VC/VC/VC/VC.csproj": {
-              "projectPath": "/Users/macbook/Documents/GitHub/Ukrtb-VC-/VC/VC/VC/VC.csproj"
+            "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC\\VC.csproj": {
+              "projectPath": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC\\VC.csproj"
             }
           }
         }
       }
     },
     "frameworks": {
-      "monoandroid11.0": {
+      "monoandroid10.0": {
         "dependencies": {
           "Com.Airbnb.Xamarin.Forms.Lottie": {
             "target": "Package",

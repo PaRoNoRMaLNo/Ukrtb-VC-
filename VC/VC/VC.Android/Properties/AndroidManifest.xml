@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.vc">
-	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
-	<application android:label="VC.Android" android:theme="@style/MainTheme"></application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.vc" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="20" android:targetSdkVersion="25" />
+	<application android:label="УКРТБ(ВЦ)" android:theme="@style/MainTheme" android:icon="@drawable/logo"></application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 </manifest>

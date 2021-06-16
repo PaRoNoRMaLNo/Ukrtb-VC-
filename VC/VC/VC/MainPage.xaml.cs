@@ -86,7 +86,6 @@ namespace VC
                         view1.Cab_master =  Convert.ToBoolean(reader[4].ToString());
                         view1.Cab_etaz = int.Parse(reader[5].ToString());
                         view1.Cab_count_stud = int.Parse(reader[6].ToString());
-                        //Cabinet_panel.Children.Add(view1);
                         view1s.Add(view1);
                     }
                 }

@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/macbook/Documents/GitHub/Ukrtb-VC-/VC/VC/VC/VC.csproj": {}
+    "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC\\VC.csproj": {}
   },
   "projects": {
-    "/Users/macbook/Documents/GitHub/Ukrtb-VC-/VC/VC/VC/VC.csproj": {
+    "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC\\VC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/macbook/Documents/GitHub/Ukrtb-VC-/VC/VC/VC/VC.csproj",
+        "projectUniqueName": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC\\VC.csproj",
         "projectName": "VC",
-        "projectPath": "/Users/macbook/Documents/GitHub/Ukrtb-VC-/VC/VC/VC/VC.csproj",
-        "packagesPath": "/Users/macbook/.nuget/packages/",
-        "outputPath": "/Users/macbook/Documents/GitHub/Ukrtb-VC-/VC/VC/VC/obj/",
+        "projectPath": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC\\VC.csproj",
+        "packagesPath": "C:\\Users\\aidar\\.nuget\\packages\\",
+        "outputPath": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "/Users/macbook/.config/NuGet/NuGet.Config"
+          "C:\\Users\\aidar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -71,7 +77,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.203/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

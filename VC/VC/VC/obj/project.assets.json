@@ -1070,23 +1070,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\aidar\\.nuget\\packages\\": {},
+    "C:\\Users\\1\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC\\VC.csproj",
+      "projectUniqueName": "F:\\Github\\Ukrtb-VC-\\VC\\VC\\VC\\VC.csproj",
       "projectName": "VC",
-      "projectPath": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC\\VC.csproj",
-      "packagesPath": "C:\\Users\\aidar\\.nuget\\packages\\",
-      "outputPath": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC\\obj\\",
+      "projectPath": "F:\\Github\\Ukrtb-VC-\\VC\\VC\\VC\\VC.csproj",
+      "packagesPath": "C:\\Users\\1\\.nuget\\packages\\",
+      "outputPath": "F:\\Github\\Ukrtb-VC-\\VC\\VC\\VC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\aidar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

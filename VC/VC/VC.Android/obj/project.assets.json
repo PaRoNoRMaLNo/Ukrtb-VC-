@@ -2299,24 +2299,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\aidar\\.nuget\\packages\\": {},
+    "C:\\Users\\1\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC.Android\\VC.Android.csproj",
+      "projectUniqueName": "F:\\Github\\Ukrtb-VC-\\VC\\VC\\VC.Android\\VC.Android.csproj",
       "projectName": "VC.Android",
-      "projectPath": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC.Android\\VC.Android.csproj",
-      "packagesPath": "C:\\Users\\aidar\\.nuget\\packages\\",
-      "outputPath": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC.Android\\obj\\",
+      "projectPath": "F:\\Github\\Ukrtb-VC-\\VC\\VC\\VC.Android\\VC.Android.csproj",
+      "packagesPath": "C:\\Users\\1\\.nuget\\packages\\",
+      "outputPath": "F:\\Github\\Ukrtb-VC-\\VC\\VC\\VC.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\aidar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2330,8 +2330,8 @@
       "frameworks": {
         "monoandroid10.0": {
           "projectReferences": {
-            "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC\\VC.csproj": {
-              "projectPath": "H:\\GitHub\\VC\\Ukrtb-VC-\\VC\\VC\\VC\\VC.csproj"
+            "F:\\Github\\Ukrtb-VC-\\VC\\VC\\VC\\VC.csproj": {
+              "projectPath": "F:\\Github\\Ukrtb-VC-\\VC\\VC\\VC\\VC.csproj"
             }
           }
         }
